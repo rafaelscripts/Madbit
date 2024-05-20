@@ -1,0 +1,27 @@
+<LoginApp>
+self.mananger: ScreenManager
+
+ScreenManager: id: mananger transition: NoTransition()
+
+pre_splash: PreSplash
+
+PreSplash: id: pre_splash </LoginApp>
+
+<PreSplash>
+BoxLayout: orientation: "vertical"
+
+Image: source: "pre-splash.png" allow_stretch: True
+
+MDLabel: text: "Bem-vindo(a) à nossa aplicação!" halign: "center" font_style: "Title" </PreSplash>
+
+Classe principal da aplicação:
+
+from kivy.uix.screenmanager import ScreenManager from kivy.app import MDApp from kivy.lang import Builder
+
+kivy.require('1.0.8')
+
+Window.size(350,580)
+
+class LoginApp(MDApp): pass
+
+if name == 'main': LoginApp().run()
