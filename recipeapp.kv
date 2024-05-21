@@ -1,0 +1,50 @@
+<RecipeBoxLayout>:
+    orientation: 'vertical'
+    padding: 20
+    spacing: 10
+
+    Image:
+        source: 'foto.png'
+        size_hint: None, None
+        size: 250, 200
+        pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+
+    BoxLayout:
+        orientation: 'vertical'
+        size_hint: None, None
+        width: 300
+        height: 450
+        pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+
+        TextInput:
+            id: recipe_name_input
+            hint_text: 'Recipe Name'
+            size_hint: 1, 1
+            height: 200
+
+        Spinner:
+            id: recipe_type_spinner
+            text: 'Select Recipe Type'
+            values: ['Breakfast', 'Lunch', 'Dinner', 'Dessert']
+            size_hint: 1, 5
+            height: 0
+
+        TextInput:
+            id: recipe_ingredients_input
+            hint_text: 'Recipe Ingredients'
+            size_hint: 1, 4
+            height: 100
+            multiline: True
+
+        TextInput:
+            id: recipe_instructions_input
+            hint_text: 'Recipe Instructions'
+            size_hint: 1, 4
+            height: 100
+            multiline: True
+
+        Button:
+            text: 'Register Recipe'
+            size_hint: 1, None
+            height: 40
+            on_press: app.register_recipe()
