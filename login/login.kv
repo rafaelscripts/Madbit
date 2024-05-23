@@ -1,0 +1,68 @@
+<LoginScreen>:
+    orientation: 'vertical'
+    padding: 40
+    spacing: 10
+
+    Image:
+        source: 'foto.png'  # Nome do arquivo da imagem
+        size_hint: None, None  # Desabilita o tamanho automático
+        size: dp(270), dp(200)  # Define o tamanho da imagem
+        allow_stretch: True  # Permite redimensionamento da imagem
+   
+    BoxLayout:
+        orientation: 'vertical'
+        size_hint: None, None
+        size: 200, 250
+        pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+        spacing: 10
+
+        Label:
+            text: 'Username:'
+            color: 1, 1, 1, 1  # Define a cor do texto como branco
+            font_size: 16  # Define o tamanho da fonte
+
+        TextInput:
+            id: username_input
+            size_hint: None, None
+            size: 200, 40
+            multiline: False
+            font_size: 16  # Define o tamanho da fonte
+            canvas.before:
+                Color:
+                    rgba: 1, 1, 1, 1  # Cor branca para a borda
+                Line:
+                    width: 1.5
+                    rectangle: self.x, self.y, self.width, self.height
+
+        Label:
+            text: 'Password:'
+            color: 1, 1, 1, 1  # Define a cor do texto como branco
+            font_size: 16  # Define o tamanho da fonte
+
+        TextInput:
+            id: password_input
+            size_hint: None, None
+            size: 200, 40
+            multiline: False
+            password: True
+            font_size: 16  # Define o tamanho da fonte
+            canvas.before:
+                Color:
+                    rgba: 1, 1, 1, 1  # Cor branca para a borda
+                Line:
+                    width: 1.5
+                    rectangle: self.x, self.y, self.width, self.height
+
+        Button:
+            text: 'Login'
+            size_hint: None, None
+            size: 200, 50
+            background_color: 1, 0.5, 0, 1  # Define a cor de fundo laranja
+            on_press: root.login()
+            font_size: 16  # Define o tamanho da fonte
+            canvas.before:
+                Color:
+                    rgba: 1, 1, 1, 1  # Cor branca para a borda
+                Line:
+                    width: 1.5
+                    rectangle: self.x, self.y, self.width, self.height
